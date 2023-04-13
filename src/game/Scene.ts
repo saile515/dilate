@@ -1,7 +1,7 @@
 import Object from "./Object";
 
 export default class Scene {
-	private children: Object[] = [];
+	children: Object[] = [];
 	private sceneObject: Object = new Object();
 
 	add(object: Object) {

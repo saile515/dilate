@@ -2,6 +2,11 @@ export default class Vector2 {
 	private x_: number;
 	private y_: number;
 
+	constructor(x: number, y: number) {
+		this.x_ = x;
+		this.y_ = y;
+	}
+
 	get x() {
 		return this.x_;
 	}

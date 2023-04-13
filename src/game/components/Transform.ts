@@ -1,9 +1,10 @@
+import Component from "../Component";
 import Vector2 from "../Vector2";
 
-export default class Transform {
-	private position_: Vector2 = new Vector2();
+export default class Transform extends Component {
+	private position_: Vector2 = new Vector2(0, 0);
 	private rotation_: number = 0;
-	private scale_: Vector2 = new Vector2();
+	private scale_: Vector2 = new Vector2(1, 1);
 
 	get position() {
 		return this.position_;
