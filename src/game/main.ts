@@ -2,17 +2,23 @@ import Object from "./Object";
 import Scene from "./Scene";
 import Sprite from "./components/Sprite";
 
-const scene = new Scene();
+export function init() {
+	const canvas: HTMLCanvasElement = document.querySelector("#game_canvas");
+	const ctx = canvas.getContext("2d");
 
-const player = new Object();
-const playerSprite = new Sprite("/rn-228.svg");
-player.addComponent(playerSprite);
-scene.add(player);
+	const scene = new Scene(ctx);
 
-function render() {
-	console.log(scene.cameraPosition);
-	scene.cameraPosition.setX(scene.cameraPosition.x + 0.01);
-	requestAnimationFrame(render);
+	const player = new Object();
+	const playerSprite = new Sprite("/rn-228.svg");
+	player.addComponent(playerSprite);
+	scene.add(player);
+
+	function update() {
+		scene.cameraPosition.setX(scene.cameraPosition.x + 0.01);
+
+		scene.render();
+		requestAnimationFrame(update);
+	}
+
+	update();
 }
-
-render();
