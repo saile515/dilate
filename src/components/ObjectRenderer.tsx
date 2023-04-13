@@ -26,7 +26,11 @@ export default function ObjectRenderer(props: { object: Object }) {
 		<div
 			className="absolute"
 			style={{ left: position.x, top: position.y, width: scale.x, height: scale.y }}>
-			<img src={props.object.getComponent<Sprite>(Sprite).sprite} alt="" />
+			<img
+				src={props.object.getComponent<Sprite>(Sprite).sprite}
+				style={{ filter: props.object.getComponent<Sprite>(Sprite).filter }}
+				alt=""
+			/>
 			<div className="relative">
 				{props.object.children.map((child, index) =>
 					child.getComponent<Sprite>(Sprite) ? (
