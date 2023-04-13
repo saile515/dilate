@@ -25,4 +25,10 @@ export default class Object {
 		object.parent = this;
 		this.children.push(object);
 	}
+
+	update() {
+		this.components.forEach((component) => {
+			component.update();
+		});
+	}
 }

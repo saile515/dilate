@@ -1,13 +1,13 @@
 import Object from "./Object";
+import Sprite from "./components/Sprite";
 import Vector2 from "./Vector2";
-import useWindowSize from "../hooks/useWindowSize";
 
 export default class Scene {
-	children: Object[] = [];
+	private children: Object[] = [];
 	cameraPosition: Vector2 = new Vector2(0, 0);
-	private sceneObject: Object = new Object();
-	private ctx: CanvasRenderingContext2D;
-	private windowSize = new Vector2(window.innerWidth, window.innerHeight);
+	sceneObject: Object = new Object();
+	ctx: CanvasRenderingContext2D;
+	windowSize = new Vector2(window.innerWidth, window.innerHeight);
 
 	constructor(ctx: CanvasRenderingContext2D) {
 		this.ctx = ctx;
@@ -25,5 +25,9 @@ export default class Scene {
 	render() {
 		this.ctx.fillStyle = "#020617";
 		this.ctx.fillRect(0, 0, this.windowSize.x, this.windowSize.y);
+
+		this.children.forEach((object) => {
+			object.update();
+		});
 	}
 }
