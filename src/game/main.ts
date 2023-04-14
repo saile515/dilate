@@ -1,6 +1,7 @@
 import Object from "./Object";
 import Scene from "./Scene";
 import Sprite from "./components/Sprite";
+import Transform from "./components/Transform";
 
 declare global {
 	var scene: Scene;
@@ -14,12 +15,14 @@ export function init() {
 	globalThis.scene = scene;
 
 	const player = new Object();
-	const playerSprite = new Sprite("/rn-228.png");
+	const playerSprite = new Sprite("/ship.png");
 	player.addComponent(playerSprite);
 	scene.add(player);
 
+	const playerTransform = player.getComponent<Transform>(Transform);
+
 	function update() {
-		scene.cameraPosition.setY(scene.cameraPosition.y + 0.01);
+		playerTransform.position.setY(playerTransform.position.y + 0.01);
 
 		scene.render();
 		requestAnimationFrame(update);

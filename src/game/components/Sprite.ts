@@ -4,7 +4,7 @@ import worldToScreen from "../utils/worldToScreen";
 
 export default class Sprite extends Component {
 	private sprite_: string = "";
-	private htmlImage: HTMLImageElement = document.createElement("img");
+	private image = new Image();
 
 	constructor(sprite: string) {
 		super();
@@ -18,7 +18,7 @@ export default class Sprite extends Component {
 
 	setSprite(sprite: string) {
 		this.sprite_ = sprite;
-		this.htmlImage.src = this.sprite;
+		this.image.src = this.sprite;
 	}
 
 	update() {
@@ -27,7 +27,7 @@ export default class Sprite extends Component {
 		const screenSpace = worldToScreen(transform);
 
 		globalThis.scene.ctx.drawImage(
-			this.htmlImage,
+			this.image,
 			screenSpace.position.x,
 			screenSpace.position.y,
 			screenSpace.scale.x,
