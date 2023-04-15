@@ -1,5 +1,5 @@
 import Component from "./Component";
-import Transform from "./components/Transform";
+import Transform from "../components/Transform";
 
 export default class Object {
 	private components: Component[] = [];

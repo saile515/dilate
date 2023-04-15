@@ -1,5 +1,5 @@
-import Component from "../Component";
-import Vector2 from "../Vector2";
+import Component from "../core/Component";
+import Vector2 from "../core/Vector2";
 
 export default class Transform extends Component {
 	private position_: Vector2 = new Vector2(0, 0);

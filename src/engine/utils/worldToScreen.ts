@@ -1,5 +1,5 @@
 import Transform from "../components/Transform";
-import Vector2 from "../Vector2";
+import Vector2 from "../core/Vector2";
 
 export default function worldToScreen(transform: Transform) {
 	const scaleFactor = globalThis.scene.windowSize.x / 10;

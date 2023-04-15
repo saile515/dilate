@@ -1,5 +1,5 @@
+import InputHandler from "../input/InputHandler";
 import Object from "./Object";
-import Sprite from "./components/Sprite";
 import Vector2 from "./Vector2";
 
 export default class Scene {
@@ -8,6 +8,8 @@ export default class Scene {
 	sceneObject: Object = new Object();
 	ctx: CanvasRenderingContext2D;
 	windowSize = new Vector2(window.innerWidth, window.innerHeight);
+	clearColor: string = "#020617";
+	inputHandler = new InputHandler();
 
 	constructor(ctx: CanvasRenderingContext2D) {
 		this.ctx = ctx;
@@ -23,7 +25,7 @@ export default class Scene {
 	}
 
 	render() {
-		this.ctx.fillStyle = "#020617";
+		this.ctx.fillStyle = this.clearColor;
 		this.ctx.fillRect(0, 0, this.windowSize.x, this.windowSize.y);
 
 		this.children.forEach((object) => {
