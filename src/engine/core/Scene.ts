@@ -10,6 +10,8 @@ export default class Scene {
 	windowSize = new Vector2(window.innerWidth, window.innerHeight);
 	clearColor: string = "#020617";
 	inputHandler = new InputHandler();
+	deltaTime: number;
+	private lastFrame: number = 0;
 
 	constructor(ctx: CanvasRenderingContext2D) {
 		this.ctx = ctx;
@@ -25,6 +27,10 @@ export default class Scene {
 	}
 
 	render() {
+		const frame = performance.now();
+		this.deltaTime = (frame - this.lastFrame) / 1000;
+		this.lastFrame = frame;
+
 		this.ctx.fillStyle = this.clearColor;
 		this.ctx.fillRect(0, 0, this.windowSize.x, this.windowSize.y);
 
