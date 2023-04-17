@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256"
+   height="256"
+   viewBox="0 0 67.733333 67.733333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09, custom)"
+   sodipodi:docname="speedometer.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="4.1132813"
+     inkscape:cx="147.44919"
+     inkscape:cy="164.71035"
+     inkscape:window-width="2560"
+     inkscape:window-height="1349"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <filter
+       id="mask-powermask-path-effect13661_inverse"
+       inkscape:label="filtermask-powermask-path-effect13661"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect13661_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect13661_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path231"
+       clip-path="none"
+       style="fill:#1a1a1a;stroke-width:2.20201;fill-opacity:1"
+       d="M 33.866667 0 A 33.866665 33.866665 0 0 0 0 33.866667 A 33.866665 33.866665 0 0 0 33.866667 67.733333 A 33.866665 33.866665 0 0 0 67.733333 33.866667 A 33.866665 33.866665 0 0 0 33.866667 0 z M 33.866667 4.2333333 A 29.633333 29.633333 0 0 1 63.5 33.866667 A 29.633333 29.633333 0 0 1 33.866667 63.5 A 29.633333 29.633333 0 0 1 4.2333333 33.866667 A 29.633333 29.633333 0 0 1 33.866667 4.2333333 z " />
+    <circle
+       style="fill:#0021e0;fill-opacity:0.30000001;stroke-width:0.466915"
+       id="circle13635"
+       cx="33.866665"
+       cy="33.866665"
+       r="29.633333" />
+    <path
+       style="fill:#1a1a1a;fill-opacity:1;stroke-width:0.264583"
+       d="M 26.516542,62.70625 C 23.100092,54.240834 33.866666,34.925 33.866666,34.925 c 0,0 12.048293,19.878123 7.350125,27.78125 -4.698168,7.903127 -11.283798,8.465416 -14.700249,0 z"
+       id="path13726"
+       sodipodi:nodetypes="zczz" />
+  </g>
+</svg>
