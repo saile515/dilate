@@ -40,7 +40,11 @@ export default function UI() {
 			)}
 			{uiState && (
 				<>
-					<p>{Math.floor(uiState.velocity.y)}</p>
+					<div className="w-0.5 h-20 m-20" style={
+						{transform: `rotate(${uiState.velocity.magnitude()/300000*320+200}deg)`}
+					}>
+						<div className="w-full h-1/2 bg-red-500"></div>
+					</div>
 				</>
 			)}
 		</div>

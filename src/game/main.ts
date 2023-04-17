@@ -43,13 +43,13 @@ export function init() {
 	function update() {
 		scene.inputHandler.update();
 
-		if (scene.inputHandler.getAction("accelerate").value) {
+		if (scene.inputHandler.getAction("accelerate").value && rigidbody.velocity.y < 300000) {
 			rigidbody.addForce(new Vector2(0, 10 ** 4));
 		} else {
 			rigidbody.addForce(new Vector2(0, -rigidbody.velocity.y / 2));
 		}
 
-		if (scene.inputHandler.getAction("decelerate").value) {
+		if (scene.inputHandler.getAction("decelerate").value && rigidbody.velocity.y < 300000) {
 			rigidbody.addForce(new Vector2(0, -(10 ** 4)));
 		}
 
