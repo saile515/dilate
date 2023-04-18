@@ -51,9 +51,10 @@ export default function UI() {
 							}}>
 							<div className="w-full rounded h-1/2 bg-red-500"></div>
 						</div>
+						<div className="rounded-full w-6 h-6 bg-zinc-900 absolute"></div>
 					</div>
 					<p className="absolute top-8 left-1/2 -translate-x-1/2 text-xl">
-						{Math.round(uiState.timer * 100) / 100} s
+						{uiState.timer.toFixed(2)} s
 					</p>
 				</>
 			)}
