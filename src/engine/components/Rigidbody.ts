@@ -18,14 +18,17 @@ export default class Rigidbody extends Component {
 	update() {
 		this.forces.forEach((force) => {
 			this.velocity_.add(
-				force.x * globalThis.scene.deltaTime,
-				force.y * globalThis.scene.deltaTime
+				(force.x / this.mass) * globalThis.scene.deltaTime,
+				(force.y / this.mass) * globalThis.scene.deltaTime
 			);
 		});
 
 		this.parent
 			.getComponent<Transform>(Transform)
-			.position.add(this.velocity_.x / this.mass, this.velocity_.y / this.mass);
+			.position.add(
+				this.velocity_.x * globalThis.scene.deltaTime,
+				this.velocity_.y * globalThis.scene.deltaTime
+			);
 
 		this.forces = [];
 	}

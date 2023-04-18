@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: ChivoMono;
+	src: url("/ChivoMono-VariableFont_wght.ttf");
+}
+
 body {
 	background-color: #f4f4f5;
 	color: #18181b;
+	font-family: ChivoMono;
 }
 
 @media (prefers-color-scheme: dark) {
