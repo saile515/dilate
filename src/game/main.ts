@@ -60,8 +60,12 @@ export function init() {
 
 		if (scene.inputHandler.getAction("accelerate").value && rigidbody.velocity.y < c) {
 			rigidbody.addForce(new Vector2(0, 10 ** 8));
+			particleSystem1.intensity = 5;
+			particleSystem2.intensity = 5;
 		} else {
 			rigidbody.addForce(new Vector2(0, (-rigidbody.velocity.y / 2) * 10 ** 7));
+			particleSystem1.intensity = 1;
+			particleSystem2.intensity = 1;
 		}
 
 		if (scene.inputHandler.getAction("decelerate").value && rigidbody.velocity.y > 0) {

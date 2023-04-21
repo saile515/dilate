@@ -31,7 +31,7 @@ export default class ParticleSystem extends Object {
 	color2: Color = new Color(128, 128, 0);
 	intensity: number = 5;
 	spread: number = 0.5;
-	size: number = 3;
+	size: number = 5;
 	lifespan: number = 0.5;
 	direction: Vector2 = new Vector2(0, 1);
 	speed: number = 1;
