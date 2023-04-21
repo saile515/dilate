@@ -1,5 +1,6 @@
 import { InputAction } from "../engine/input/InputHandler";
 import Object from "../engine/core/Object";
+import ParticleSystem from "../engine/ParticleSystem";
 import Rigidbody from "../engine/components/Rigidbody";
 import Scene from "../engine/core/Scene";
 import Sprite from "../engine/components/Sprite";
@@ -34,6 +35,14 @@ export function init() {
 	player.addComponent(rigidbody);
 	scene.add(player);
 
+	const particleSystem1 = new ParticleSystem();
+	particleSystem1.getComponent<Transform>(Transform).position.set(5, 5);
+	scene.add(particleSystem1);
+
+	const particleSystem2 = new ParticleSystem();
+	particleSystem2.getComponent<Transform>(Transform).position.set(5, 5);
+	scene.add(particleSystem2);
+
 	scene.inputHandler.addAction(new InputAction<boolean>("accelerate"));
 	keyMap.set("w", "accelerate");
 
@@ -63,6 +72,19 @@ export function init() {
 		if (gammaFactor && scene.deltaTime) {
 			timer -= scene.deltaTime / gammaFactor;
 		}
+
+		particleSystem1
+			.getComponent<Transform>(Transform)
+			.position.set(playerTransform.position.x + 0.17, playerTransform.position.y + -1);
+
+		particleSystem1.speed = rigidbody.velocity.y / 100 + 0.25;
+
+		particleSystem2
+			.getComponent<Transform>(Transform)
+			.position.set(playerTransform.position.x + 0.83, playerTransform.position.y + -1);
+
+		particleSystem2.speed = rigidbody.velocity.y / 100 + 0.25;
+
 		UIStateStore.setTimer(timer);
 
 		scene.cameraPosition.set(

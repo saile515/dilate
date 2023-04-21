@@ -53,7 +53,7 @@ export default function UI() {
 						</div>
 						<div className="rounded-full w-6 h-6 bg-zinc-900 absolute"></div>
 					</div>
-					<p className="absolute top-8 left-1/2 -translate-x-1/2 text-xl">
+					<p className="absolute top-8 left-1/2 -translate-x-1/2 text-xl text-zinc-100">
 						{uiState.timer.toFixed(2)} s
 					</p>
 				</>
