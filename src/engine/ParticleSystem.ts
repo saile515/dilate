@@ -18,7 +18,7 @@ class Particle {
 	update() {
 		this.velocity.add(this.acceleration.x, this.acceleration.y);
 		this.transform.position.add(this.velocity.x, this.velocity.y);
-		this.lifespan -= globalThis.scene.deltaTime;
+		this.lifespan -= scene.deltaTime;
 
 		if (this.lifespan < 0) {
 			this.destroy();
@@ -39,7 +39,7 @@ export default class ParticleSystem extends Object {
 
 	update() {
 		const transform = worldToScreen(this.getComponent<Transform>(Transform));
-		const ctx = globalThis.scene.ctx;
+		const ctx = scene.ctx;
 		for (let i = 0; i < this.intensity; i++) {
 			const particle = new Particle(this.lifespan);
 			particle.acceleration.set(

@@ -28,6 +28,12 @@ export default class Player extends Object {
 
 		scene.inputHandler.addAction(new InputAction<boolean>("decelerate"));
 		keyMap.set("s", "decelerate");
+
+		scene.inputHandler.addAction(new InputAction<boolean>("left"));
+		keyMap.set("a", "left");
+
+		scene.inputHandler.addAction(new InputAction<boolean>("right"));
+		keyMap.set("d", "right");
 	}
 
 	update() {
@@ -49,6 +55,14 @@ export default class Player extends Object {
 			rigidbody.addForce(new Vector2(0, -(10 ** 8)));
 		}
 
+		if (scene.inputHandler.getAction("left").value && transform.position.x > -4) {
+			transform.position.addX(-1 * scene.deltaTime);
+		}
+
+		if (scene.inputHandler.getAction("right").value && transform.position.x < 4) {
+			transform.position.addX(1 * scene.deltaTime);
+		}
+
 		this.engine1
 			.getComponent<Transform>(Transform)
 			.position.set(transform.position.x + 0.17, transform.position.y + -1);
@@ -61,7 +75,7 @@ export default class Player extends Object {
 
 		this.engine2.speed = rigidbody.velocity.y / 100 + 0.25;
 
-		globalThis.scene.cameraPosition.set(
+		scene.cameraPosition.set(
 			0,
 			transform.position.y +
 				(rigidbody.velocity.y > 0
@@ -69,7 +83,7 @@ export default class Player extends Object {
 					: Math.max(Math.sqrt(Math.abs(rigidbody.velocity.y)) * 0.1, -1))
 		);
 
-		globalThis.scene.cameraPosition.add(
+		scene.cameraPosition.add(
 			((Math.random() - 0.5) * rigidbody.velocity.magnitude()) / 10000,
 			((Math.random() - 0.5) * rigidbody.velocity.magnitude()) / 10000
 		);

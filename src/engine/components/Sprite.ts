@@ -26,7 +26,7 @@ export default class Sprite extends Component {
 
 		const screenSpace = worldToScreen(transform);
 
-		globalThis.scene.ctx.drawImage(
+		scene.ctx.drawImage(
 			this.image,
 			screenSpace.position.x,
 			screenSpace.position.y,
